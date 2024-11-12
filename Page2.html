@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter the Key</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .message {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #congratulations {
+            display: none;
+            font-size: 24px;
+            color: green;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message">
+        <p>Please enter the key below to complete the challenge:</p>
+        <input type="text" id="keyInput" placeholder="Enter key">
+        <button onclick="checkKey()">Submit</button>
+    </div>
+
+    <div id="congratulations">
+        <p>Well done, you've completed the challenge!</p>
+    </div>
+
+    <script>
+        // The correct key (flag) that the user needs to input
+        const correctKey = "dbSZJ8hwEpzaPeK5VBALcRt26UrG79vHWqxnuk4TmsgF3f";
+
+        // Function to check the input key
+        function checkKey() {
+            const userInput = document.getElementById("keyInput").value;
+
+            if (userInput === correctKey) {
+                // Show the success message
+                document.getElementById("congratulations").style.display = "block";
+                document.querySelector(".message").style.display = "none"; // Hide the input field and button
+            } else {
+                alert("Incorrect key. Try again.");
+            }
+        }
+    </script>
+
+</body>
+</html>

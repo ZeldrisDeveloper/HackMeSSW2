@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackMeSSW </title>
+    <style>
+        /* Style to hide the button behind the image */
+        #ImageContainer {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #Image {
+            width: 100%;
+            height: auto;
+        }
+
+        #hiddenButton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0); /* Transparent */
+            border: none;
+            z-index: -1; /* Place it behind the image */
+        }
+
+        /* Add styles to make it visible only after inspecting the code */
+        #hiddenButton:hover {
+            background-color: rgba(255, 0, 0, 0.5); /* Red tint on hover for visibility */
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, There!</h1>
+    <p>Welcome to my Super Secure Website good luck getting in HaHa!</p>
+    
+    <!-- Button that triggers the password prompt -->
+    <button onclick="greetUser()">Click Me!</button>
+   
+
+    <!-- JavaScript directly inside the HTML file -->
+    <script>
+        function greetUser() {
+            // The password you want to use
+            const correctPassword = "myPassword123";
+
+            // Prompt the user to enter the password
+            const enteredPassword = prompt("Please enter the password:");
+
+            // Check if the entered password is correct
+            if (enteredPassword === correctPassword) {
+                alert("Hello, you got in Well done we are all done here now, or are we... anyways look at this dog");
+
+
+                // After user clicks OK on the alert, redirect to the meme
+                window.location.href = "file:///C:/Users/QQ/Desktop/hello-world/Page1.html"; // URL to page with the meme
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
+          
+        }
+    </script>
+</body>
+</html>
